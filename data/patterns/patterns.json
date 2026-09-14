@@ -1,0 +1,135 @@
+{
+  "schema_version": "0.1.0",
+  "as_of": "2026-09-14",
+  "patterns": [
+    {
+      "pattern_id": "WP-C001",
+      "name": "Explicit norms and enforcement",
+      "problem": "Participants may not know acceptable behaviour, while enforcement may be discretionary or difficult to contest.",
+      "components": [
+        {"component_id": "WP-C001-A", "name": "Show relevant rules at the point of participation"},
+        {"component_id": "WP-C001-B", "name": "Make enforcement criteria, responsibility, and procedure public"},
+        {"component_id": "WP-C001-C", "name": "Provide reporting, sanctions, and review mechanisms"},
+        {"component_id": "WP-C001-D", "name": "Involve members in defining norms"}
+      ],
+      "mechanism": "visible rules → more comprehensible expectations → changed selection or conduct of participants",
+      "mechanism_status": "plausible",
+      "pattern_maturity": "documented",
+      "evidence_scope": "narrow-context",
+      "assessment": "context-limited",
+      "outcome_domains": ["participation", "operational-capacity", "legitimacy"],
+      "cost_domains": ["time", "moderation", "emotional-labour", "administration"]
+    },
+    {
+      "pattern_id": "WP-C002",
+      "name": "Structured retrospectives / debriefs with follow-up",
+      "problem": "Teams repeat errors or lose learning because experience is not compared with goals, explanations, and subsequent action.",
+      "components": [
+        {"component_id": "WP-C002-A", "name": "Structured debrief after an activity", "pattern_maturity": "corroborated", "evidence_scope": "multi-context"},
+        {"component_id": "WP-C002-B", "name": "Translate reflection into identifiable actions"},
+        {"component_id": "WP-C002-C", "name": "Assign responsibility and later verify implementation"},
+        {"component_id": "WP-C002-D", "name": "Add specific review components"}
+      ],
+      "mechanism": "shared reconstruction → identify discrepancies → revise strategy → changed subsequent practice",
+      "mechanism_status": "plausible",
+      "pattern_maturity": "documented",
+      "evidence_scope": "multi-context",
+      "assessment": "core debrief corroborated; full follow-up package documented",
+      "outcome_domains": ["learning", "operational-capacity", "sustainability"],
+      "cost_domains": ["time", "facilitation", "cognitive-load", "administration"]
+    },
+    {
+      "pattern_id": "WP-C003",
+      "name": "Explicit distribution of care work",
+      "problem": "Listening, onboarding, relational maintenance, and distress management can concentrate on people who receive less recognition or have less ability to refuse.",
+      "components": [
+        {"component_id": "WP-C003-A", "name": "Identify care work and who performs it"},
+        {"component_id": "WP-C003-B", "name": "Assign responsibility and make workload negotiable"},
+        {"component_id": "WP-C003-C", "name": "Rotate transferable care tasks"},
+        {"component_id": "WP-C003-D", "name": "Recognise time, compensation, or workload offsets"},
+        {"component_id": "WP-C003-E", "name": "Provide stewardship or peer-support relationships"}
+      ],
+      "mechanism": "visible care work → negotiable allocation → less reliance on implicit availability → more equitable load",
+      "mechanism_status": "proposed",
+      "pattern_maturity": "documented",
+      "evidence_scope": "narrow-context",
+      "assessment": "documented; direct causal evidence for redistribution remains scarce",
+      "outcome_domains": ["sustainability", "power-distribution", "participation"],
+      "cost_domains": ["time", "training", "emotional-labour", "coordination"]
+    },
+    {
+      "pattern_id": "WP-C004",
+      "name": "Informal power and mandates",
+      "problem": "People may control agenda, information, or decisions without authority that is explicit, bounded, or contestable.",
+      "components": [
+        {"component_id": "WP-C004-A", "name": "Describe domain and limits of a mandate"},
+        {"component_id": "WP-C004-B", "name": "Define selection, duration, and revocation"},
+        {"component_id": "WP-C004-C", "name": "Make exercise of authority observable"},
+        {"component_id": "WP-C004-D", "name": "Distribute access to skills and information"},
+        {"component_id": "WP-C004-E", "name": "Rotate roles"}
+      ],
+      "mechanism": "identifiable authority → contestable expectations and limits → possibility of correction or revocation",
+      "mechanism_status": "proposed",
+      "pattern_maturity": "documented",
+      "evidence_scope": "narrow-context",
+      "assessment": "the problem is documented more broadly than the proposed remedies",
+      "outcome_domains": ["power-distribution", "legitimacy", "continuity"],
+      "cost_domains": ["time", "handover", "training", "administration"]
+    },
+    {
+      "pattern_id": "WP-C005",
+      "name": "Consensus / consent / lazy consensus",
+      "problem": "Groups need to authorise common action without excluding relevant objections or requiring simultaneous participation in every decision.",
+      "components": [
+        {"component_id": "WP-C005-A", "name": "Consensus"},
+        {"component_id": "WP-C005-B", "name": "Consent"},
+        {"component_id": "WP-C005-C", "name": "Lazy consensus"}
+      ],
+      "mechanism": "different protocols structure coordination and objection costs differently; no single shared mechanism is assumed",
+      "mechanism_status": "proposed",
+      "pattern_maturity": "documented",
+      "evidence_scope": "narrow-context",
+      "assessment": "protocols are well documented; comparative evidence on superiority is insufficient",
+      "outcome_domains": ["decision-quality", "participation", "power-distribution", "legitimacy"],
+      "cost_domains": ["time", "facilitation", "cognitive-load", "coordination"]
+    },
+    {
+      "pattern_id": "WP-C006",
+      "name": "Asynchronous decision-making",
+      "problem": "Meeting-bound decisions exclude people unavailable in the same time window or require responses before they can process relevant information.",
+      "components": [
+        {"component_id": "WP-C006-A", "name": "Written accessible proposal"},
+        {"component_id": "WP-C006-B", "name": "Explicit contribution and objection window"},
+        {"component_id": "WP-C006-C", "name": "Closure rule and responsible closer"},
+        {"component_id": "WP-C006-D", "name": "Decision and rationale record"},
+        {"component_id": "WP-C006-E", "name": "Escalation to another mode when needed"}
+      ],
+      "mechanism": "no requirement for co-presence → contribution at different times → potentially broader access",
+      "mechanism_status": "plausible",
+      "pattern_maturity": "documented",
+      "evidence_scope": "narrow-context",
+      "assessment": "context-limited; inclusive benefit versus synchronous decision-making remains uncertain",
+      "outcome_domains": ["participation", "decision-quality", "operational-capacity", "continuity"],
+      "cost_domains": ["time", "cognitive-load", "coordination", "administration"]
+    },
+    {
+      "pattern_id": "WP-C007",
+      "name": "Conflict and dissent",
+      "problem": "Contrary information may be suppressed, while relational hostility and persistent role conflict can harm work and retention.",
+      "components": [
+        {"component_id": "WP-C007-A", "name": "Collect objections and alternatives before decision"},
+        {"component_id": "WP-C007-B", "name": "Protect authentic dissent"},
+        {"component_id": "WP-C007-C", "name": "Assign a devil's advocate role"},
+        {"component_id": "WP-C007-D", "name": "Use a distinct process for relational conflict"},
+        {"component_id": "WP-C007-E", "name": "Make division of labour and responsibility contestable"}
+      ],
+      "mechanism": "contrary information → reassessment of assumptions → broader alternatives",
+      "mechanism_status": "plausible",
+      "pattern_maturity": "contested",
+      "evidence_scope": "multi-context",
+      "assessment": "the general claim that more conflict improves decisions is not sustainable; intervention types must be separated",
+      "outcome_domains": ["decision-quality", "learning", "sustainability", "continuity"],
+      "cost_domains": ["time", "facilitation", "cognitive-load", "emotional-labour"]
+    }
+  ]
+}

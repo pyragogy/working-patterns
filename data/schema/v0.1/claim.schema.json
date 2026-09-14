@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pyragogy/working-patterns/blob/main/data/schema/v0.1/claim.schema.json",
+  "title": "Working Patterns claim record",
+  "type": "object",
+  "required": ["claim_id", "pattern_id", "component_ids", "claim", "relation", "verification", "locator", "limitations"],
+  "properties": {
+    "claim_id": {"type":"string", "pattern":"^WP-C[0-9]{3}-CL[0-9]{2}$"},
+    "pattern_id": {"type":"string", "pattern":"^WP-C[0-9]{3}$"},
+    "component_ids": {"type":"array", "items":{"type":"string"}, "uniqueItems":true},
+    "claim": {"type":"string", "minLength":5},
+    "source_id": {"type":["string","null"]},
+    "case_id": {"type":["string","null"]},
+    "evidence_type": {"type":["string","null"]},
+    "relation": {"enum":["supports","complicates","contradicts","context-only"]},
+    "verification": {"type":"string"},
+    "locator": {"type":"string"},
+    "limitations": {"type":"string"}
+  },
+  "additionalProperties": true
+}
