@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pyragogy/working-patterns/blob/main/data/schema/v0.1/study.schema.json",
+  "title": "Working Patterns study record",
+  "type": "object",
+  "required": ["study_id", "source_ids", "design", "case_ids", "unit_of_analysis", "independence_notes"],
+  "properties": {
+    "study_id": {"type":"string", "pattern":"^WP-ST[0-9]{3}$"},
+    "source_ids": {"type":"array", "items":{"type":"string"}, "minItems":1, "uniqueItems":true},
+    "design": {"type":"string"},
+    "case_ids": {"type":"array", "items":{"type":"string"}, "uniqueItems":true},
+    "unit_of_analysis": {"type":"string"},
+    "independence_notes": {"type":"string"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pyragogy/working-patterns/blob/main/data/schema/v0.1/ai-pattern.schema.json",
+  "title": "Working Patterns Pyragogy AI candidate",
+  "type": "object",
+  "required": ["pattern_id", "name", "problem", "intervention", "proposed_mechanism", "pattern_maturity", "evidence_status", "research_question"],
+  "properties": {
+    "pattern_id": {"type":"string", "pattern":"^WP-AI[0-9]{3}$"},
+    "name": {"type":"string"},
+    "problem": {"type":"string"},
+    "intervention": {"type":"string"},
+    "proposed_mechanism": {"type":"string"},
+    "pattern_maturity": {"const":"candidate"},
+    "evidence_status": {"const":"research-agenda"},
+    "human_pattern_links": {"type":"array", "items":{"type":"string", "pattern":"^WP-C[0-9]{3}$"}, "uniqueItems":true},
+    "candidate_outcomes": {"type":"array", "items":{"type":"string"}},
+    "candidate_costs": {"type":"array", "items":{"type":"string"}},
+    "failure_hypotheses": {"type":"array", "items":{"type":"string"}},
+    "research_question": {"type":"string"}
+  },
+  "additionalProperties": true
+}

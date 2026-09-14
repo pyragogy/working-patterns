@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "studies": [
+    {"study_id":"WP-ST001","source_ids":["S01"],"design":"field experiment","case_ids":["K01"],"unit_of_analysis":"discussion/comment in an online community","independence_notes":"Author account and article describe the same study; do not count separately."},
+    {"study_id":"WP-ST002","source_ids":["S02"],"design":"cross-society laboratory experiment","case_ids":["K02"],"unit_of_analysis":"small experimental group","independence_notes":"Multiple country pools within one coordinated research design."},
+    {"study_id":"WP-ST003","source_ids":["S03"],"design":"meta-analysis","case_ids":[],"unit_of_analysis":"published and unpublished debrief samples","independence_notes":"Overlap with later debrief syntheses requires study-level deduplication."},
+    {"study_id":"WP-ST004","source_ids":["S04"],"design":"meta-analysis","case_ids":[],"unit_of_analysis":"AAR/debrief studies","independence_notes":"Corpus is explicitly reused/extended by WP-ST005."},
+    {"study_id":"WP-ST005","source_ids":["S05"],"design":"meta-analysis extension","case_ids":[],"unit_of_analysis":"AAR/debrief studies","independence_notes":"Includes the 61 studies from WP-ST004 plus additional studies; not an independent replication of WP-ST004."},
+    {"study_id":"WP-ST006","source_ids":["S06"],"design":"qualitative/comparative case study","case_ids":["K03"],"unit_of_analysis":"Agile project teams","independence_notes":"Four teams in one organisation; some membership overlap."},
+    {"study_id":"WP-ST007","source_ids":["S07"],"design":"quasi-experiment","case_ids":["K04"],"unit_of_analysis":"manufacturing teams/workers","independence_notes":"Full methods not yet audited in the corpus."},
+    {"study_id":"WP-ST008","source_ids":["S08"],"design":"multi-experiment research programme","case_ids":["K11"],"unit_of_analysis":"individuals/small experimental groups","independence_notes":"Related authors and construct family to S20; exact dataset overlap must be checked rather than assumed."},
+    {"study_id":"WP-ST011","source_ids":["S11"],"design":"qualitative organisational case study","case_ids":["K06"],"unit_of_analysis":"co-housing community","independence_notes":"One case used across multiple claims; claims are not independent replications."},
+    {"study_id":"WP-ST014","source_ids":["S14"],"design":"comparative observational study","case_ids":["K07","K08"],"unit_of_analysis":"decision episodes nested in FLOSS projects","independence_notes":"K08 is a subset/context within the same source/case family, not independent evidence."},
+    {"study_id":"WP-ST015","source_ids":["S15"],"design":"meta-analysis","case_ids":[],"unit_of_analysis":"teams/groups","independence_notes":"116 studies / 8,880 groups reported in the audited research map; coverage ends in 2010."},
+    {"study_id":"WP-ST016","source_ids":["S16"],"design":"experiment","case_ids":[],"unit_of_analysis":"small groups","independence_notes":"Only abstract-level appraisal in Research Map 0.2."},
+    {"study_id":"WP-ST018","source_ids":["S18"],"design":"observational research","case_ids":["K09"],"unit_of_analysis":"large Wikia communities","independence_notes":"Short version inspected; journal article and preprint/version should not be double-counted."},
+    {"study_id":"WP-ST019","source_ids":["S19"],"design":"mixed-method observational research","case_ids":["K10"],"unit_of_analysis":"volunteer moderators / network of communities","independence_notes":"Same lead author/platform family as S01, but a distinct study; case overlap should be checked where relevant."},
+    {"study_id":"WP-ST020","source_ids":["S20"],"design":"experiment","case_ids":[],"unit_of_analysis":"experimental task allocation","independence_notes":"Related author/research programme to WP-ST008; exact reuse not yet consolidated."}
+  ]
+}

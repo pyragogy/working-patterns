@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Zero-dependency integrity gate for the Working Patterns corpus.
 
-The validator intentionally checks epistemic/reference integrity rather than
-pretending to determine whether a research claim is true.
+The validator checks structural and epistemic-reference integrity. It does not
+pretend to determine whether a research claim is true.
 """
 from __future__ import annotations
 
@@ -18,6 +18,8 @@ PATTERN_ID = re.compile(r"^WP-C\d{3}$")
 CLAIM_ID = re.compile(r"^WP-C\d{3}-CL\d{2}$")
 CASE_ID = re.compile(r"^K\d{2}$")
 SOURCE_ID = re.compile(r"^(?:SC\d{3}|S\d{2})$")
+STUDY_ID = re.compile(r"^WP-ST\d{3}$")
+AI_ID = re.compile(r"^WP-AI\d{3}$")
 
 MATURITY = {"candidate", "documented", "corroborated", "contested", "revised", "retired"}
 SCOPE = {"narrow-context", "multi-context", "cross-domain"}
@@ -49,23 +51,21 @@ def unique(records, key, label):
     return seen
 
 
-patterns_doc = load(DATA / "patterns" / "patterns.json")
-claims_doc = load(DATA / "claims" / "claims.json")
-cases_doc = load(DATA / "cases" / "cases.json")
-sources_doc = load(DATA / "sources" / "sources.json")
-ai_doc = load(DATA / "ai-patterns" / "candidates.json") if (DATA / "ai-patterns" / "candidates.json").exists() else {"patterns": []}
-
-patterns = patterns_doc.get("patterns", [])
-claims = claims_doc.get("claims", [])
-cases = cases_doc.get("cases", [])
-sources = sources_doc.get("sources", [])
-ai_patterns = ai_doc.get("patterns", [])
+patterns = load(DATA / "patterns" / "patterns.json").get("patterns", [])
+claims = load(DATA / "claims" / "claims.json").get("claims", [])
+cases = load(DATA / "cases" / "cases.json").get("cases", [])
+sources = load(DATA / "sources" / "sources.json").get("sources", [])
+studies = load(DATA / "studies" / "studies.json").get("studies", [])
+ai_patterns = load(DATA / "ai-patterns" / "candidates.json").get("patterns", [])
+genealogy = load(DATA / "genealogy" / "relations.json").get("relations", [])
 
 pattern_ids = unique(patterns, "pattern_id", "patterns")
-claim_ids = unique(claims, "claim_id", "claims")
+unique(claims, "claim_id", "claims")
 case_ids = unique(cases, "case_id", "cases")
 source_ids = unique(sources, "source_id", "sources")
-ai_ids = unique(ai_patterns, "pattern_id", "ai-patterns") if ai_patterns else set()
+study_ids = unique(studies, "study_id", "studies")
+unique(ai_patterns, "pattern_id", "ai-patterns")
+unique(genealogy, "relation_id", "genealogy")
 
 component_ids = set()
 for p in patterns:
@@ -88,6 +88,10 @@ for p in patterns:
             errors.append(f"duplicate component_id {cid}")
         else:
             component_ids.add(cid)
+        if "pattern_maturity" in c and c["pattern_maturity"] not in MATURITY:
+            errors.append(f"{cid}: invalid component maturity")
+        if "evidence_scope" in c and c["evidence_scope"] not in SCOPE:
+            errors.append(f"{cid}: invalid component evidence scope")
 
 for c in claims:
     cid = c.get("claim_id", "")
@@ -135,14 +139,40 @@ for source in sources:
     if source.get("licence_status") is None:
         errors.append(f"{sid}: missing licence_status")
 
+for study in studies:
+    stid = study.get("study_id", "")
+    if not STUDY_ID.match(stid):
+        errors.append(f"study: invalid study_id {stid!r}")
+    for sid in study.get("source_ids", []):
+        if sid not in source_ids:
+            errors.append(f"{stid}: unknown source_id {sid!r}")
+    for kid in study.get("case_ids", []):
+        if kid not in case_ids:
+            errors.append(f"{stid}: unknown case_id {kid!r}")
+    if not study.get("independence_notes"):
+        warnings.append(f"{stid}: independence_notes empty")
+
 for p in ai_patterns:
     pid = p.get("pattern_id", "")
-    if not re.match(r"^WP-AI\d{3}$", pid):
+    if not AI_ID.match(pid):
         errors.append(f"ai-pattern: invalid pattern_id {pid!r}")
     if p.get("pattern_maturity") != "candidate":
         errors.append(f"{pid}: AI research seed must remain candidate until an evidence cycle changes it")
     if p.get("evidence_status") != "research-agenda":
         errors.append(f"{pid}: AI research seed must declare evidence_status=research-agenda")
+    for human_id in p.get("human_pattern_links", []):
+        if human_id not in pattern_ids:
+            errors.append(f"{pid}: unknown human_pattern_link {human_id!r}")
+
+resolvable = source_ids | study_ids
+for rel in genealogy:
+    rid = rel.get("relation_id", "?")
+    for side in ("left", "right"):
+        value = rel.get(side)
+        if value not in resolvable:
+            errors.append(f"{rid}: {side} reference {value!r} is not a source or study ID")
+    if not rel.get("decision"):
+        errors.append(f"{rid}: missing classification decision")
 
 # The corpus should never silently collapse evidence into a score.
 for path in [DATA / "patterns" / "patterns.json", DATA / "claims" / "claims.json"]:
@@ -150,7 +180,12 @@ for path in [DATA / "patterns" / "patterns.json", DATA / "claims" / "claims.json
     if re.search(r'"(?:confidence|evidence|quality)_score"\s*:', text):
         errors.append(f"{path.relative_to(ROOT)}: aggregate evidence/confidence scoring is prohibited in v0.1")
 
-print(f"Working Patterns integrity gate: {len(patterns)} patterns, {len(claims)} claims, {len(cases)} cases, {len(sources)} sources, {len(ai_patterns)} AI candidates")
+print(
+    "Working Patterns integrity gate: "
+    f"{len(patterns)} human patterns, {len(claims)} claims, {len(cases)} cases, "
+    f"{len(sources)} sources, {len(studies)} studies/syntheses, {len(ai_patterns)} AI candidates, "
+    f"{len(genealogy)} genealogy relations"
+)
 for warning in warnings:
     print(f"WARNING: {warning}")
 if errors:
