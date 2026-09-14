@@ -1,84 +1,220 @@
-# Working Patterns
+<div align="center">
+  <img src="docs/assets/working-patterns-banner.svg" alt="Working Patterns — evidence, conditions, failures, practice" width="100%" />
+</div>
 
-**Evidence-aware organisational patterns: what appears to work, where, why, at what cost, and where it breaks.**
+<p align="center">
+  <strong>Evidence-aware organisational patterns: what appears to work, where, why, at what cost — and where it breaks.</strong>
+</p>
 
-Working Patterns is an open research project for studying organisational practices used by teams, cooperatives, open-source projects, communities, networks, and other groups trying to work together.
+<p align="center">
+  <a href="https://github.com/pyragogy/working-patterns/actions/workflows/validate.yml"><img src="https://github.com/pyragogy/working-patterns/actions/workflows/validate.yml/badge.svg" alt="Corpus integrity" /></a>
+  <img src="https://img.shields.io/badge/research-exploratory-6e7781" alt="Research status: exploratory" />
+  <img src="https://img.shields.io/badge/schema-v0.1-1f6feb" alt="Schema v0.1" />
+  <img src="https://img.shields.io/badge/Pyragogy-human%20%2B%20AI-2ea043" alt="Pyragogy human + AI" />
+</p>
 
-It is not a catalogue of universal best practices.
+<p align="center">
+  <a href="METHODOLOGY.md">Method</a> ·
+  <a href="research/research-map-0.2.md">Research Map 0.2</a> ·
+  <a href="docs/AI_RESEARCH_AGENDA.md">AI Research Track</a> ·
+  <a href="docs/ROADMAP.md">Roadmap</a> ·
+  <a href="CONTRIBUTING.md">Contribute evidence</a>
+</p>
 
-The core research question is:
+---
+
+## The question
 
 > **Which organisational patterns appear to work, for which problems, under which conditions, according to what evidence — and where do they stop working?**
 
-The project treats a pattern as an investigable intervention rather than a slogan. The basic unit of evaluation is:
+Working Patterns studies recurring organisational practices used by teams, cooperatives, open-source projects, communities, networks, and increasingly **human–AI groups and agentic workflows**.
 
-**problem → intervention → implementation → outcome → evidence → conditions**
+It is **not a catalogue of universal best practices**.
 
-A source can document a protocol, observe its use, compare it with an alternative, measure an outcome, or propose a mechanism. These are not treated as equivalent forms of support.
+The project treats a pattern as an investigable intervention rather than a slogan:
 
-## Research principles
+```text
+problem → intervention → implementation → outcome → evidence → conditions
+```
 
-Working Patterns separates:
+A source may document a protocol, observe a practice, compare alternatives, measure an outcome, or merely make a mechanism plausible. Those are different epistemic jobs and the corpus keeps them different.
 
-- what is **claimed**;
-- what is **observed**;
-- what is **supported**;
-- what is **complicated or contradicted**;
-- what remains **unknown**.
+---
 
-A source existing is not the same as a source supporting a claim. A practice being adopted is not the same as it being implemented. Evidence that a problem exists is not evidence that a proposed solution solves it.
+## What makes this different
 
-The project deliberately keeps multiple outcomes separate, including operational capacity, decision quality, participation, power distribution, sustainability, learning, legitimacy, and continuity. A practice may improve one while worsening another.
+Working Patterns is designed around five separations:
 
-## Current research status
+| Do not collapse | Why it matters |
+|---|---|
+| **claim ≠ source** | A source can support one proposition and complicate another. |
+| **problem evidence ≠ solution evidence** | Showing that invisible labour exists does not prove that rotation fixes it. |
+| **adoption ≠ implementation** | Calling a meeting “consensus” or “retrospective” does not establish what happened. |
+| **one outcome ≠ overall success** | Participation can rise while moderation cost or power concentration also rises. |
+| **convergence ≠ independent replication** | Multiple authors, agents, or frameworks may share the same data, cases, or lineage. |
+
+The project therefore refuses a single “evidence score” or “confidence score” for a pattern.
+
+The useful answer is often conditional:
+
+> **This component appears supported for this outcome in these contexts; this part remains unknown; this counterevidence changes the boundary.**
+
+---
+
+## Current corpus
 
 The first two research cycles were completed on **14 September 2026**.
 
-### Research Map 0.1 — field mapping
+**Research Map 0.1** mapped 19 research families and extracted Richard D. Bartlett's *Patterns for Decentralised Organising* as Seed Corpus 001.
 
-The first cycle mapped 19 research families, extracted Richard D. Bartlett's *Patterns for Decentralised Organising* as Seed Corpus 001, established a provisional problem taxonomy, and tested the first candidate-pattern records.
-
-### Research Map 0.2 — deep evidence cycle
-
-The second cycle tested seven high-priority pattern families:
+**Research Map 0.2** took seven candidate families through a deeper evidence cycle.
 
 | ID | Pattern family | Current assessment |
 |---|---|---|
-| `WP-C001` | Explicit norms and enforcement | documented · narrow-context · context-limited |
-| `WP-C002` | Structured retrospectives / debriefs with follow-up | debrief core corroborated; full package documented |
-| `WP-C003` | Explicit distribution of care work | documented · narrow-context |
-| `WP-C004` | Informal power and mandates | documented · narrow-context |
-| `WP-C005` | Consensus / consent / lazy consensus | documented · narrow-context |
-| `WP-C006` | Asynchronous decision-making | documented · narrow-context · context-limited |
-| `WP-C007` | Conflict and dissent | contested as a general pattern |
+| `WP-C001` | Explicit norms and enforcement | `documented` · `narrow-context` · context-limited |
+| `WP-C002` | Structured retrospectives / debriefs with follow-up | debrief core `corroborated`; full package `documented` |
+| `WP-C003` | Explicit distribution of care work | `documented` · `narrow-context` |
+| `WP-C004` | Informal power and mandates | `documented` · `narrow-context` |
+| `WP-C005` | Consensus / consent / lazy consensus | `documented` · comparative evidence insufficient |
+| `WP-C006` | Asynchronous decision-making | `documented` · `narrow-context` · context-limited |
+| `WP-C007` | Conflict and dissent | broad formulation `contested` |
 
-The strongest methodological result is that a whole family such as “consensus”, “care”, or “conflict” cannot responsibly receive one reputation. Evaluation must attach to a specific intervention, implementation, context, and outcome.
+The machine-readable v0.1 corpus currently contains:
+
+- **7** human organisational pattern families;
+- **33** claim records;
+- **11** case / case-cluster records;
+- **21** seed/source records;
+- **12** Pyragogy AI research candidates.
+
+These counts are inventory, **not evidence strength**.
+
+---
 
 ## Evidence relations
 
-Claims can have multiple evidence links. Each link describes what a source does **for that specific claim**:
+Evidence is attached to a **bounded claim** through one of four relations:
 
-- `supports`
-- `complicates`
-- `contradicts`
-- `context-only`
+```text
+supports
+complicates
+contradicts
+context-only
+```
 
-These relations are not assigned globally to an entire source or pattern.
+For example, evidence that open communities can concentrate authority is highly relevant to the **problem** of informal power; it is not automatically evidence that rotating roles will solve it.
+
+See [`data/claims/claims.json`](data/claims/claims.json).
+
+---
 
 ## Pattern maturity
 
-Working Patterns currently uses:
+Human pattern records currently use:
 
-- `candidate`
-- `documented`
-- `corroborated`
-- `contested`
-- `revised`
-- `retired`
+```text
+candidate → documented → corroborated
+                     ↘ contested → revised → retired
+```
 
-`documented` means that an intervention is sufficiently described to study. It does **not** mean that it has been shown to be effective.
+This is a research lifecycle, not a quality ladder.
 
-Evidence scope is tracked separately, for example `narrow-context`, `multi-context`, or `cross-domain`.
+`documented` means the intervention is described well enough to investigate. It does **not** mean effective.
+
+Evidence breadth is tracked separately:
+
+- `narrow-context`
+- `multi-context`
+- `cross-domain`
+
+---
+
+## Pyragogy: patterns for human + AI groups
+
+Working Patterns also asks a second question:
+
+> **Which patterns help humans and AI systems work together without hiding authority, evidence, dissent, cost, or failure?**
+
+The first 12 AI candidates include:
+
+- **Friction Before Delegation**
+- **Provenance Before Persuasion**
+- **Bounded AI Mandate**
+- **Reversible Automation**
+- **Escalation Ladder for Autonomy**
+- **Preserve Dissent Through Synthesis**
+- **Separate Observation, Interpretation, and Recommendation**
+- **Scoped Memory**
+- **Handoff With Epistemic Debt**
+- **Independence Before Multi-Agent Consensus**
+- **Name the Accountable Human Authority**
+- **Close the AI Advice Loop**
+
+They are deliberately labelled:
+
+```text
+pattern_maturity: candidate
+evidence_status: research-agenda
+```
+
+Pyragogy is the reason to investigate them — **not evidence that they work**.
+
+Read [`docs/AI_RESEARCH_AGENDA.md`](docs/AI_RESEARCH_AGENDA.md) or inspect [`data/ai-patterns/candidates.json`](data/ai-patterns/candidates.json).
+
+---
+
+## A future advisor should argue, not prescribe
+
+A future MCP / organisational advisor should not answer:
+
+> “Use async decision-making.”
+
+It should be able to respond to something like:
+
+> “We are a remote team of 14 people. Synchronous decisions exclude several members. Which patterns are relevant, what evidence supports them, under which conditions, what alternatives exist, and what could go wrong?”
+
+Before recommending even a local experiment, it should ask about decision type, reversibility, time pressure, excluded members, language/access, reading time, present authority, and objection handling.
+
+Then it should expose:
+
+```text
+candidate patterns
++ evidence
++ counterevidence
++ boundary conditions
++ alternatives
++ costs
++ failure modes
++ unknowns
+```
+
+This is the intended path:
+
+```text
+open research corpus
+        ↓
+handbook / workbook / cards
+        ↓
+evidence-aware MCP / advisor
+        ↓
+local experiments that can feed evidence back into the corpus
+```
+
+See the [`roadmap`](docs/ROADMAP.md).
+
+---
+
+## Research maps
+
+The narrative layer explains why the structured corpus looks the way it does:
+
+- [`Research Map 0.1`](research/research-map-0.1.md) — field reconnaissance, seed extraction, source families, initial taxonomy and gaps;
+- [`Research Map 0.2`](research/research-map-0.2.md) — seven deep dives, evidence/counterevidence, cases, genealogy, costs, boundary conditions, and MCP-readiness assessment;
+- [`Research provenance`](research/PROVENANCE.md) — hashes and normalisation rules for the original research outputs.
+
+Historical maps are snapshots. New evidence should revise the live corpus and create a new research cycle rather than rewriting the past.
+
+---
 
 ## Repository structure
 
@@ -88,68 +224,132 @@ working-patterns/
 ├── METHODOLOGY.md
 ├── CONTRIBUTING.md
 ├── LICENSING.md
-├── CITATION.cff
+├── VERSIONING.md
+├── CHANGELOG.md
 ├── research/
+│   ├── PROVENANCE.md
 │   ├── research-map-0.1.md
 │   └── research-map-0.2.md
 ├── data/
-│   ├── patterns/
-│   ├── claims/
-│   ├── cases/
-│   ├── sources/
+│   ├── patterns/patterns.json
+│   ├── claims/claims.json
+│   ├── cases/cases.json
+│   ├── sources/sources.json
+│   ├── ai-patterns/candidates.json
 │   └── schema/v0.1/
+├── docs/
+│   ├── AI_RESEARCH_AGENDA.md
+│   ├── DECISION_LOG.md
+│   ├── GOVERNANCE.md
+│   ├── GLOSSARY.md
+│   └── ROADMAP.md
 ├── scripts/
 │   └── validate_corpus.py
-└── .github/workflows/
-    └── validate.yml
+└── .github/
+    ├── ISSUE_TEMPLATE/
+    └── workflows/validate.yml
 ```
 
-## Why structured data
+---
 
-The research corpus is intended to remain readable by humans while also being reusable by software. Stable IDs and explicit relations are therefore first-class parts of the method.
+## Integrity gate
 
-The schema is being designed so the same corpus can eventually support several outputs without rewriting the research:
+The repository contains a zero-dependency validator:
 
-**open research corpus → handbook → evidence-aware MCP/advisor**
+```bash
+python scripts/validate_corpus.py
+```
 
-No MCP, RAG system, recommendation engine, or website is part of the initial research infrastructure. Product architecture follows the evidence, not the reverse.
+It checks, among other things:
 
-## Future advisory behaviour
+- stable/unique IDs;
+- claim → pattern/component references;
+- claim → source/case references;
+- canonical evidence relations;
+- pattern maturity/scope/mechanism enums;
+- source-less claims explicitly marked as synthesis;
+- AI seed patterns remaining `candidate / research-agenda`;
+- absence of prohibited aggregate evidence/confidence scores.
 
-A future machine interface should not answer:
+GitHub Actions runs the gate on pushes and pull requests to `main`.
 
-> “Use consensus.”
+The validator can detect structural/epistemic inconsistencies. It cannot determine whether a scientific claim is true.
 
-It should be able to answer questions such as:
+---
 
-> “We are a remote team of 14 people. Synchronous decisions exclude several members. Which patterns are relevant, what evidence supports them, under which conditions, what alternatives exist, and what could go wrong?”
+## Contribute friction
 
-A responsible answer should expose uncertainty, counterevidence, implementation requirements, costs, and missing contextual information before recommending a local experiment.
+Useful contributions are not endorsements. They include:
 
-## Seed corpus
+- a source that directly supports one intervention component;
+- a failed or abandoned implementation;
+- a person/group exit case;
+- counterevidence;
+- a better locator;
+- evidence of shared datasets or shared genealogy;
+- a licence correction;
+- a boundary condition;
+- an alternative intervention;
+- evidence that declared practice diverged from actual implementation;
+- an AI pattern failure.
 
-The first seed is Richard D. Bartlett's [Patterns for Decentralised Organising](https://github.com/rdbartlett/patterns), originally produced from work with Enspiral and Loomio. The seed is CC0, but Bartlett, Loomio, and Enspiral are treated as a connected provenance line rather than independent confirmations.
+Use the issue forms or read [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
-Working Patterns expands beyond this seed into organisational research, team science, cooperative governance, peer production, facilitation, commons governance, deliberation, and related fields.
+> **“This conclusion is unsupported” is a successful research contribution if the evidence shows it.**
 
-## Research integrity
-
-Working Patterns is currently an exploratory evidence-mapping project, **not a completed systematic review**. Search coverage, full-text access, dataset overlap, publication bias, implementation fidelity, and survivorship bias are tracked as limitations rather than silently converted into confidence.
-
-In particular:
-
-> **Unknown does not mean zero, absent, ineffective, or disproven.**
+---
 
 ## Licensing
 
-There is deliberately no blanket assumption that everything cited or studied here can be commercially republished. Research notes, quotations, reusable licensed material, and original Working Patterns prose are tracked separately.
+Working Patterns studies sources with heterogeneous rights: CC0, CC BY, CC BY-SA, CC BY-NC, Apache-licensed material, and conventional or unresolved copyright.
+
+The project therefore separates:
+
+1. research notes and structured facts;
+2. quotations;
+3. reusable licensed material;
+4. original Working Patterns prose.
+
+There is deliberately no assumption that everything cited here can be republished commercially.
 
 See [`LICENSING.md`](LICENSING.md).
 
-## Relationship to Pyragogy
+---
 
-Working Patterns is a project of the [Pyragogy](https://github.com/pyragogy) research ecosystem. It shares the principle that evidence, interpretation, counterevidence, and revision should remain distinguishable.
+## Relationship to UnPeeragogy
 
-Its aim is practical but not prescriptive:
+Working Patterns and [UnPeeragogy](https://github.com/pyragogy/UnPeeragogy) ask complementary questions:
 
-> **A consultation grounded in evidence and uncertainty, not an automatic selector of best practices.**
+```text
+UnPeeragogy
+pattern/theory → friction → counterevidence → revision
+
+Working Patterns
+problem → intervention → implementation → evidence → conditions → alternatives
+```
+
+Both belong to the Pyragogy research ecosystem: **AI that can expose friction and uncertainty, not merely produce agreement.**
+
+---
+
+## Research status
+
+Working Patterns is currently an **exploratory evidence-mapping project**.
+
+It is not yet:
+
+- a completed systematic review;
+- a validated catalogue of best practices;
+- a causal recommendation engine;
+- an autonomous organisational advisor.
+
+That limitation is part of the product specification, not something to hide.
+
+> **Unknown does not mean zero, absent, ineffective, or disproven.**
+
+---
+
+<p align="center">
+  <strong>A Pyragogy research project.</strong><br/>
+  <em>Use it. Test it. Contradict it. Leave the evidence better than you found it.</em>
+</p>
