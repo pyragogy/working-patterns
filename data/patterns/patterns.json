@@ -34,7 +34,7 @@
       "mechanism_status": "plausible",
       "pattern_maturity": "documented",
       "evidence_scope": "multi-context",
-      "assessment": "core debrief corroborated; full follow-up package documented",
+      "assessment": "core structured debrief is provisionally corroborated from convergent synthesis-level evidence, but the key S03/S04 support remains abstract-level in the live corpus pending full-text methods audit and deduplication; the full follow-up package remains documented",
       "outcome_domains": ["learning", "operational-capacity", "sustainability"],
       "cost_domains": ["time", "facilitation", "cognitive-load", "administration"]
     },
