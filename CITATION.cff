@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use Working Patterns in research, please cite this repository and the specific sources behind the claims you rely on."
+title: "Working Patterns"
+type: dataset
+authors:
+  - family-names: "Terzi"
+    given-names: "Fabrizio"
+    orcid: "https://orcid.org/0009-0004-7191-0455"
+repository-code: "https://github.com/pyragogy/working-patterns"
+abstract: "Evidence-aware research corpus on organisational patterns, their implementation, outcomes, boundary conditions, costs, counterevidence, and failure modes."
+keywords:
+  - organisational patterns
+  - governance
+  - collaboration
+  - decentralised organising
+  - evidence synthesis
+  - organisational research
+license: "NOASSERTION"
+version: "0.1.0"
+date-released: "2026-09-14"
