@@ -10,13 +10,14 @@
   <a href="https://github.com/pyragogy/working-patterns/actions/workflows/validate.yml"><img src="https://github.com/pyragogy/working-patterns/actions/workflows/validate.yml/badge.svg" alt="Corpus integrity" /></a>
   <img src="https://img.shields.io/badge/research-exploratory-6e7781" alt="Research status: exploratory" />
   <img src="https://img.shields.io/badge/schema-v0.1-1f6feb" alt="Schema v0.1" />
-  <img src="https://img.shields.io/badge/Pyragogy-human%20%2B%20AI-2ea043" alt="Pyragogy human + AI" />
+  <img src="https://img.shields.io/badge/AI%20track-questions%2C%20not%20evidence-d29922" alt="AI track: questions, not evidence" />
 </p>
 
 <p align="center">
   <a href="METHODOLOGY.md">Method</a> ·
   <a href="research/research-map-0.2.md">Research Map 0.2</a> ·
-  <a href="docs/AI_RESEARCH_AGENDA.md">AI Research Track</a> ·
+  <a href="research/SEARCH_LOG.md">Search Log</a> ·
+  <a href="docs/AI_RESEARCH_AGENDA.md">AI Research Questions</a> ·
   <a href="docs/ROADMAP.md">Roadmap</a> ·
   <a href="CONTRIBUTING.md">Contribute evidence</a>
 </p>
@@ -27,7 +28,7 @@
 
 > **Which organisational patterns appear to work, for which problems, under which conditions, according to what evidence — and where do they stop working?**
 
-Working Patterns studies recurring organisational practices used by teams, cooperatives, open-source projects, communities, networks, and increasingly **human–AI groups and agentic workflows**.
+Working Patterns studies recurring organisational practices used by teams, cooperatives, open-source projects, communities, networks, and other groups trying to work together.
 
 It is **not a catalogue of universal best practices**.
 
@@ -72,7 +73,7 @@ The first two research cycles were completed on **14 September 2026**.
 | ID | Pattern family | Current assessment |
 |---|---|---|
 | `WP-C001` | Explicit norms and enforcement | `documented` · `narrow-context` · context-limited |
-| `WP-C002` | Structured retrospectives / debriefs with follow-up | debrief core `corroborated`; full package `documented` |
+| `WP-C002` | Structured retrospectives / debriefs with follow-up | debrief core **provisionally** `corroborated`; key synthesis support remains abstract-level pending full-text methods audit and deduplication; full package `documented` |
 | `WP-C003` | Explicit distribution of care work | `documented` · `narrow-context` |
 | `WP-C004` | Informal power and mandates | `documented` · `narrow-context` |
 | `WP-C005` | Consensus / consent / lazy consensus | `documented` · comparative evidence insufficient |
@@ -87,9 +88,18 @@ The machine-readable v0.1 corpus currently contains:
 - **21** seed/source records;
 - **15** study/synthesis records;
 - **8** explicit genealogy/dependence relations;
-- **12** Pyragogy AI research candidates.
+- **12** separate Pyragogy AI research candidates.
 
 These counts are inventory, **not evidence strength**. A claim-count discrepancy in the original Research Map 0.2 is preserved as an explicit [`erratum`](research/ERRATA.md) rather than repaired by inventing a record.
+
+### Important methodological limits
+
+The epistemic scaffold is currently stronger than the empirical coverage.
+
+- Cycles 0.1/0.2 were exploratory evidence mapping, **not a systematic review**.
+- The historical search process was not recorded with complete query strings, database-by-database result counts, dual screening, and exclusion logs. This gap is now explicit in [`research/SEARCH_LOG.md`](research/SEARCH_LOG.md); it will not be retroactively fabricated.
+- Most coding has been performed in a single-researcher, AI-assisted workflow. A minimal independent recoding procedure is specified in [`docs/SECOND_READER_PROTOCOL.md`](docs/SECOND_READER_PROTOCOL.md), but no dual-review claim is made until that work actually occurs.
+- The corpus remains culturally and linguistically narrow relative to the ambition of the project; low-resource, multilingual, non-Western, cooperative, mutual-aid, and exit/dissolution contexts remain priority gaps.
 
 ---
 
@@ -123,6 +133,8 @@ This is a research lifecycle, not a quality ladder.
 
 `documented` means the intervention is described well enough to investigate. It does **not** mean effective.
 
+`corroborated` must also be read with its verification state and scope. In the current corpus, `WP-C002-A` is explicitly **provisional** because its strongest synthesis-level support has not yet completed the full-text methods audit required for further promotion.
+
 Evidence breadth is tracked separately:
 
 - `narrow-context`
@@ -131,13 +143,15 @@ Evidence breadth is tracked separately:
 
 ---
 
-## Pyragogy: patterns for human + AI groups
+## Pyragogy AI research questions — not evaluated Working Patterns
+
+> **⚠️ Status: hypothesis generation only.** The 12 `WP-AI*` records have not completed an evidence cycle. They must not be treated as validated patterns, recommendations, or evidence that Pyragogy's hypotheses are correct.
 
 Working Patterns also asks a second question:
 
-> **Which patterns help humans and AI systems work together without hiding authority, evidence, dissent, cost, or failure?**
+> **Which candidate interventions might help humans and AI systems work together without hiding authority, evidence, dissent, cost, or failure — and what evidence would falsify them?**
 
-The first 12 AI candidates include:
+The initial research questions include:
 
 - **Friction Before Delegation**
 - **Provenance Before Persuasion**
@@ -152,14 +166,16 @@ The first 12 AI candidates include:
 - **Name the Accountable Human Authority**
 - **Close the AI Advice Loop**
 
-They are deliberately labelled:
+They are deliberately pinned to:
 
 ```text
 pattern_maturity: candidate
 evidence_status: research-agenda
 ```
 
-Pyragogy is the reason to investigate them — **not evidence that they work**.
+The analogies to human organisational patterns are **hypotheses to test**, not evidence of shared mechanism. For example, human dissent and information loss during LLM summarisation may resemble one another functionally while operating through different mechanisms.
+
+Pyragogy is the reason to investigate these questions — **not evidence that they work**.
 
 Read [`docs/AI_RESEARCH_AGENDA.md`](docs/AI_RESEARCH_AGENDA.md) or inspect [`data/ai-patterns/candidates.json`](data/ai-patterns/candidates.json).
 
@@ -212,6 +228,7 @@ The narrative layer explains why the structured corpus looks the way it does:
 
 - [`Research Map 0.1`](research/research-map-0.1.md) — field reconnaissance, seed extraction, source families, initial taxonomy and gaps;
 - [`Research Map 0.2`](research/research-map-0.2.md) — seven deep dives, evidence/counterevidence, cases, genealogy, costs, boundary conditions, and MCP-readiness assessment;
+- [`Search Log`](research/SEARCH_LOG.md) — explicit retrospective search limitations plus the prospective search record from cycle 0.3 onward;
 - [`Research provenance`](research/PROVENANCE.md) — hashes and normalisation rules for the original research outputs;
 - [`Errata`](research/ERRATA.md) — discrepancies preserved rather than silently rewritten.
 
@@ -232,6 +249,7 @@ working-patterns/
 ├── research/
 │   ├── PROVENANCE.md
 │   ├── ERRATA.md
+│   ├── SEARCH_LOG.md
 │   ├── research-map-0.1.md
 │   └── research-map-0.2.md
 ├── data/
@@ -251,6 +269,7 @@ working-patterns/
 │   ├── GOVERNANCE.md
 │   ├── GLOSSARY.md
 │   ├── QUERY_CONTRACT.md
+│   ├── SECOND_READER_PROTOCOL.md
 │   └── ROADMAP.md
 ├── examples/
 │   └── remote-team-async.md
@@ -314,7 +333,7 @@ Useful contributions are not endorsements. They include:
 - a boundary condition;
 - an alternative intervention;
 - evidence that declared practice diverged from actual implementation;
-- an AI pattern failure.
+- an AI candidate failure.
 
 Use the issue forms or read [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
