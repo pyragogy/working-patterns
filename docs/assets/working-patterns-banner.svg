@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600" role="img" aria-labelledby="title desc">
+  <title id="title">Working Patterns</title>
+  <desc id="desc">Evidence-aware organisational patterns — a Pyragogy research project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#081018"/>
+      <stop offset="0.52" stop-color="#102635"/>
+      <stop offset="1" stop-color="#0b1720"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6ee7d8"/>
+      <stop offset="1" stop-color="#9fd8ff"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1600" height="600" fill="url(#bg)"/>
+  <g opacity="0.16" stroke="#9fd8ff" fill="none">
+    <path d="M0 118 C250 40 350 190 590 112 S960 48 1190 130 1450 120 1600 42"/>
+    <path d="M0 438 C210 350 405 512 640 420 S1010 350 1250 460 1470 420 1600 510"/>
+    <path d="M220 0 C170 160 310 250 240 390 S160 520 210 600"/>
+    <path d="M1360 0 C1410 150 1290 260 1365 390 S1430 520 1390 600"/>
+  </g>
+  <g transform="translate(155 105)">
+    <g stroke="url(#accent)" stroke-width="5" fill="#102635">
+      <circle cx="80" cy="195" r="18"/>
+      <circle cx="190" cy="100" r="18"/>
+      <circle cx="190" cy="290" r="18"/>
+      <circle cx="315" cy="195" r="22"/>
+      <path d="M96 182 L174 112 M96 208 L174 280 M208 110 L296 184 M208 280 L296 208"/>
+    </g>
+    <circle cx="315" cy="195" r="48" fill="none" stroke="#6ee7d8" stroke-width="2" opacity="0.45" filter="url(#glow)"/>
+    <path d="M296 195 l13 13 28-34" fill="none" stroke="#e8fff9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif">
+    <text x="560" y="220" fill="#f4fbff" font-size="84" font-weight="720" letter-spacing="-2">Working Patterns</text>
+    <rect x="562" y="255" width="640" height="4" rx="2" fill="url(#accent)" opacity="0.9"/>
+    <text x="560" y="315" fill="#c7d9e4" font-size="31" font-weight="420">evidence · conditions · failures · practice</text>
+    <text x="560" y="385" fill="#88a5b5" font-size="25">Not a catalogue of best practices.</text>
+    <text x="560" y="425" fill="#88a5b5" font-size="25">A research map of what holds, what breaks, and what remains unknown.</text>
+    <text x="560" y="505" fill="#6ee7d8" font-size="22" font-weight="650" letter-spacing="3">PYRAGOGY RESEARCH</text>
+  </g>
+</svg>
