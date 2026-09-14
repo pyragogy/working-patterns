@@ -58,6 +58,7 @@ sources = load(DATA / "sources" / "sources.json").get("sources", [])
 studies = load(DATA / "studies" / "studies.json").get("studies", [])
 ai_patterns = load(DATA / "ai-patterns" / "candidates.json").get("patterns", [])
 genealogy = load(DATA / "genealogy" / "relations.json").get("relations", [])
+manifest = load(DATA / "manifest.json")
 
 pattern_ids = unique(patterns, "pattern_id", "patterns")
 unique(claims, "claim_id", "claims")
@@ -174,6 +175,20 @@ for rel in genealogy:
     if not rel.get("decision"):
         errors.append(f"{rid}: missing classification decision")
 
+actual_counts = {
+    "human_patterns": len(patterns),
+    "claims": len(claims),
+    "cases": len(cases),
+    "sources": len(sources),
+    "studies_or_syntheses": len(studies),
+    "genealogy_relations": len(genealogy),
+    "ai_candidates": len(ai_patterns),
+}
+for key, actual in actual_counts.items():
+    declared = manifest.get("counts", {}).get(key)
+    if declared != actual:
+        errors.append(f"manifest count mismatch for {key}: declared {declared!r}, actual {actual}")
+
 # The corpus should never silently collapse evidence into a score.
 for path in [DATA / "patterns" / "patterns.json", DATA / "claims" / "claims.json"]:
     text = path.read_text(encoding="utf-8")
@@ -192,4 +207,4 @@ if errors:
     for error in errors:
         print(f"ERROR: {error}", file=sys.stderr)
     sys.exit(1)
-print("OK: corpus references and epistemic enums are internally consistent")
+print("OK: corpus references, manifest, and epistemic enums are internally consistent")

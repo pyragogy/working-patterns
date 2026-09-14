@@ -1,0 +1,27 @@
+{
+  "corpus_version": "0.1.0",
+  "schema_version": "0.1.0",
+  "as_of": "2026-09-14",
+  "research_status": "exploratory-evidence-mapping",
+  "counts": {
+    "human_patterns": 7,
+    "claims": 33,
+    "cases": 11,
+    "sources": 21,
+    "studies_or_syntheses": 15,
+    "genealogy_relations": 8,
+    "ai_candidates": 12
+  },
+  "research_maps": ["0.1", "0.2"],
+  "epistemic_guards": [
+    "claim-level evidence relations",
+    "adoption distinct from implementation",
+    "source distinct from study",
+    "evidence dependence tracked",
+    "counterevidence retained",
+    "unknown distinct from absence",
+    "no aggregate pattern confidence score",
+    "AI seeds remain candidate until evidence cycle"
+  ],
+  "machine_policy": "argued consultation, not automatic best-practice selection"
+}

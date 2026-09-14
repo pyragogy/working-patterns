@@ -7,14 +7,15 @@ authors:
     given-names: "Fabrizio"
     orcid: "https://orcid.org/0009-0004-7191-0455"
 repository-code: "https://github.com/pyragogy/working-patterns"
-abstract: "Evidence-aware research corpus on organisational patterns, their implementation, outcomes, boundary conditions, costs, counterevidence, and failure modes."
+url: "https://github.com/pyragogy/working-patterns"
+abstract: "Evidence-aware research corpus on organisational patterns, their implementation, outcomes, boundary conditions, costs, counterevidence, failure modes, and human–AI collaboration candidates."
 keywords:
   - organisational patterns
   - governance
   - collaboration
   - decentralised organising
+  - human-AI collaboration
   - evidence synthesis
   - organisational research
-license: "NOASSERTION"
 version: "0.1.0"
 date-released: "2026-09-14"
