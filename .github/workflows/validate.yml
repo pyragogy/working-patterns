@@ -12,15 +12,19 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.13'
+
       - name: Validate structured corpus
         run: python scripts/validate_corpus.py
+
       - name: Parse every JSON file
         run: |
           python - <<'PY'
