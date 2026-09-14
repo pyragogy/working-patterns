@@ -1,0 +1,52 @@
+name: Candidate organisational pattern
+about: Propose an investigable response to a recurring organisational problem.
+title: "candidate: "
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Candidate name
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Define the observable organisational problem; avoid “improve collaboration”.
+    validations:
+      required: true
+  - type: textarea
+    id: intervention
+    attributes:
+      label: Intervention
+      description: What would people actually do differently?
+    validations:
+      required: true
+  - type: textarea
+    id: mechanism
+    attributes:
+      label: Proposed mechanism
+      description: Why might the intervention change the outcome? Mark this as a hypothesis.
+    validations:
+      required: true
+  - type: textarea
+    id: outcomes
+    attributes:
+      label: Outcomes to measure
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context / unit of analysis
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives for the same problem
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Initial provenance
+      description: Where does this pattern come from?

@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Working Patterns methodology
+    url: https://github.com/pyragogy/working-patterns/blob/main/METHODOLOGY.md
+    about: Read the evidence model before proposing a research-status change.

@@ -1,0 +1,55 @@
+name: Counterevidence / failed case
+about: Add a result that narrows, complicates, contradicts, or exposes failure.
+title: "counterevidence: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Counterevidence is a first-class contribution. A negative case does not automatically identify causality; report the observed outcome separately from your interpretation.
+  - type: input
+    id: pattern
+    attributes:
+      label: Pattern / component ID
+      placeholder: WP-C006 or WP-C006-C
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: What was observed or reported?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source URL / DOI / public record
+    validations:
+      required: true
+  - type: input
+    id: locator
+    attributes:
+      label: Locator
+    validations:
+      required: true
+  - type: textarea
+    id: implementation
+    attributes:
+      label: What was actually implemented?
+      description: Distinguish the declared pattern from observed practice where possible.
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome and affected group
+    validations:
+      required: true
+  - type: textarea
+    id: causality
+    attributes:
+      label: Causal interpretation (if any)
+      description: State uncertainty explicitly. “The group failed” does not prove “the pattern caused failure.”
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Limitations / missing information
+    validations:
+      required: true

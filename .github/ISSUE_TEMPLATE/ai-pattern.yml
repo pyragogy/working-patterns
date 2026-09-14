@@ -1,0 +1,53 @@
+name: Pyragogy AI pattern candidate
+about: Propose a human–AI / AI-mediated organisational pattern for research.
+title: "AI candidate: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        AI candidates are **not** validated responsible-AI rules. They enter as `candidate / research-agenda` and face the same burden of proof as human patterns.
+  - type: input
+    id: name
+    attributes:
+      label: Candidate name
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Socio-technical problem
+      description: What changes because cognition, memory, authority, synthesis, or action is delegated to AI?
+    validations:
+      required: true
+  - type: textarea
+    id: intervention
+    attributes:
+      label: Investigable intervention
+      description: Specify more than a feature name such as “add citations” or “human in the loop”.
+    validations:
+      required: true
+  - type: textarea
+    id: authority
+    attributes:
+      label: Authority and human role
+      description: Who can approve, stop, override, revise, or own the outcome?
+    validations:
+      required: true
+  - type: textarea
+    id: mechanism
+    attributes:
+      label: Proposed mechanism
+    validations:
+      required: true
+  - type: textarea
+    id: failure
+    attributes:
+      label: Failure hypotheses
+      description: How might the intervention fail, become ritual, or transfer cost elsewhere?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Relevant evidence / adjacent literature
+      description: Leave gaps visible; do not promote plausibility into evidence.

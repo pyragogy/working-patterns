@@ -1,0 +1,62 @@
+name: Add evidence
+about: Link evidence to a specific claim or propose a new bounded claim.
+title: "evidence: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Evidence belongs to a **claim**, not globally to a pattern. Please be precise about what the source can and cannot support.
+  - type: input
+    id: claim
+    attributes:
+      label: Existing claim ID (if any)
+      placeholder: WP-C002-CL04
+  - type: textarea
+    id: proposition
+    attributes:
+      label: Exact proposition
+      description: What bounded claim should this evidence bear on?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source URL / DOI
+    validations:
+      required: true
+  - type: input
+    id: locator
+    attributes:
+      label: Locator
+      description: Page, section, table, figure, paragraph, commit, timestamp, etc.
+    validations:
+      required: true
+  - type: dropdown
+    id: relation
+    attributes:
+      label: Evidence relation
+      options:
+        - supports
+        - complicates
+        - contradicts
+        - context-only
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Study/context
+      description: Unit of analysis, sample/scale, method, relevant implementation details.
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Limitations / what this does NOT establish
+    validations:
+      required: true
+  - type: textarea
+    id: dependence
+    attributes:
+      label: Known dependence
+      description: Does this reuse an existing dataset, case, organisation, source lineage, or research programme?
