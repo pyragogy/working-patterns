@@ -82,12 +82,14 @@ The first two research cycles were completed on **14 September 2026**.
 The machine-readable v0.1 corpus currently contains:
 
 - **7** human organisational pattern families;
-- **33** claim records;
+- **32** enumerated claim records;
 - **11** case / case-cluster records;
 - **21** seed/source records;
+- **15** study/synthesis records;
+- **8** explicit genealogy/dependence relations;
 - **12** Pyragogy AI research candidates.
 
-These counts are inventory, **not evidence strength**.
+These counts are inventory, **not evidence strength**. A claim-count discrepancy in the original Research Map 0.2 is preserved as an explicit [`erratum`](research/ERRATA.md) rather than repaired by inventing a record.
 
 ---
 
@@ -200,7 +202,7 @@ evidence-aware MCP / advisor
 local experiments that can feed evidence back into the corpus
 ```
 
-See the [`roadmap`](docs/ROADMAP.md).
+See the [`roadmap`](docs/ROADMAP.md) and future [`query contract`](docs/QUERY_CONTRACT.md).
 
 ---
 
@@ -210,7 +212,8 @@ The narrative layer explains why the structured corpus looks the way it does:
 
 - [`Research Map 0.1`](research/research-map-0.1.md) — field reconnaissance, seed extraction, source families, initial taxonomy and gaps;
 - [`Research Map 0.2`](research/research-map-0.2.md) — seven deep dives, evidence/counterevidence, cases, genealogy, costs, boundary conditions, and MCP-readiness assessment;
-- [`Research provenance`](research/PROVENANCE.md) — hashes and normalisation rules for the original research outputs.
+- [`Research provenance`](research/PROVENANCE.md) — hashes and normalisation rules for the original research outputs;
+- [`Errata`](research/ERRATA.md) — discrepancies preserved rather than silently rewritten.
 
 Historical maps are snapshots. New evidence should revise the live corpus and create a new research cycle rather than rewriting the past.
 
@@ -228,22 +231,31 @@ working-patterns/
 ├── CHANGELOG.md
 ├── research/
 │   ├── PROVENANCE.md
+│   ├── ERRATA.md
 │   ├── research-map-0.1.md
 │   └── research-map-0.2.md
 ├── data/
+│   ├── manifest.json
 │   ├── patterns/patterns.json
 │   ├── claims/claims.json
 │   ├── cases/cases.json
 │   ├── sources/sources.json
+│   ├── studies/studies.json
+│   ├── genealogy/relations.json
 │   ├── ai-patterns/candidates.json
 │   └── schema/v0.1/
 ├── docs/
 │   ├── AI_RESEARCH_AGENDA.md
 │   ├── DECISION_LOG.md
+│   ├── FIELD_GUIDE_TEMPLATE.md
 │   ├── GOVERNANCE.md
 │   ├── GLOSSARY.md
+│   ├── QUERY_CONTRACT.md
 │   └── ROADMAP.md
+├── examples/
+│   └── remote-team-async.md
 ├── scripts/
+│   ├── query.py
 │   └── validate_corpus.py
 └── .github/
     ├── ISSUE_TEMPLATE/
@@ -265,6 +277,9 @@ It checks, among other things:
 - stable/unique IDs;
 - claim → pattern/component references;
 - claim → source/case references;
+- study → source/case references;
+- genealogy dependencies;
+- manifest counts;
 - canonical evidence relations;
 - pattern maturity/scope/mechanism enums;
 - source-less claims explicitly marked as synthesis;
@@ -274,6 +289,14 @@ It checks, among other things:
 GitHub Actions runs the gate on pushes and pull requests to `main`.
 
 The validator can detect structural/epistemic inconsistencies. It cannot determine whether a scientific claim is true.
+
+For lightweight inspection:
+
+```bash
+python scripts/query.py list
+python scripts/query.py pattern WP-C006
+python scripts/query.py ai WP-AI006
+```
 
 ---
 
